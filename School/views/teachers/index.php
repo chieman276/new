@@ -4,7 +4,19 @@
     <br><br><br>
     <h1 style="text-align:center">Danh sách giáo viên</h1>
     <br>
-    <a href="index.php?controller=teacher&action=add" class="btn btn-primary"><i class="fas fa-calendar-plus"></i></a>
+    <div class="row">
+        <div class="col-lg-4">
+            <a href="index.php?controller=teacher&action=add" class="btn btn-primary"><i class="fas fa-calendar-plus"></i></a>
+        </div>
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4">
+            <nav class="navbar navbar-light bg-light">
+                <form action="index.php?controller=teacher&action=search" method="POST" class="form-inline">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" name="search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </nav>
+        </div>
 
     <table class="table table-boder" border="10">
         <thead>
@@ -22,14 +34,14 @@
         <tbody>
             <?php foreach ($teachers as $key => $teacher) : ?>
                 <tr>
-                    <td><?= $teacher->id ?></td>
+                    <td><?= ++$key ?></td>
                     <td><?= $teacher->name ?></td>
                     <td><?= $teacher->gender ?></td>
                     <td><?= $teacher->birthday ?></td>
                     <td><?= $teacher->position  ?></td>
                     <td><?= $teacher->principal_name  ?></td>
 
-                    <td> <a href="index.php?controller=teacher&action=show&id=<?= $teacher->id ?>" class="btn btn-primary"><i class="fas fa-door-open"></i></a></td>
+                    <td> <a href="index.php?controller=teacher&action=show&id=<?= $teacher->id ?>" class="btn btn-primary"><i class="far fa-eye fa-lg text-light"></i></i></a></td>
                     <td> <a href="index.php?controller=teacher&action=edit&id=<?= $teacher->id ?>" class="btn btn-info"><i class="fas fa-edit"></i></a></td>
                     <td> <a href="index.php?controller=teacher&action=delete&id=<?= $teacher->id ?>" onclick="return confirm ('Bạn có chắc muốn xóa <?= $teacher->name ?> không')" class="btn btn-danger"> <i class="fas fa-trash-alt"></i></a></td>
 
@@ -43,8 +55,8 @@
     </table>
 
 </div>
-<a href="index.php?controller=principal&action=index" class="btn btn-primary">Hiệu trưởng</a>
-<a href="index.php?controller=student&action=index" class="btn btn-primary">Học sinh</a>
+<a style="color: white;" href="index.php?controller=principal&action=index" class="btn btn-warning">Hiệu trưởng</a>
+<a style="float: right;" href="index.php?controller=student&action=index" class="btn btn-primary">Học sinh</a>
 
 
 

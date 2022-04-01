@@ -6,6 +6,7 @@ include_once './layouts/header.php'
     <h1> Thông tin chi tiết học sinh</h1>
     <div>
     <tr>
+        
         <td>
             <h2>
                 <b>Họ Tên:</b><?= $student->name ?>

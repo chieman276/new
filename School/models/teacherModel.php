@@ -24,7 +24,9 @@ class teacherModel{
     public function find($id){
         global $connect;
 
-        $sql = "SELECT teachers.*, principal.name AS principal_name FROM `teachers` JOIN principal ON principal.id = teachers.`principalID`";
+        $sql = "SELECT teachers.*, principal.name AS principal_name FROM `teachers` JOIN principal ON principal.id = teachers.`principalID`
+        where teachers.id = $id
+        ";
 
         $stmt = $connect->query($sql);
 
@@ -35,6 +37,25 @@ class teacherModel{
         $row = $stmt->fetch();
 
         return $row;
+
+    }
+
+    public function search($search)
+    {
+        global $connect;
+        $sql = "SELECT teachers.*, principal.name AS principal_name FROM `teachers` JOIN principal ON principal.id = teachers.`principalID`
+         WHERE teachers.`name` LIKE '%$search%'";
+        // $sql = "SELECT * FROM products WHERE tenhang LIKE '" .'%'.$_POST['search'].'%'."'";
+        $stmt = $connect->query($sql);
+        
+
+        //thiết lập kiểu dữ liệu trả về
+
+        $stmt->setFetchMode(PDO::FETCH_OBJ);
+
+        $rows = $stmt->fetchAll();
+
+        return $rows;
 
     }
 

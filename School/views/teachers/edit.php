@@ -4,7 +4,7 @@
 // print_r($noteType);
 // echo "</pre>";
 ?>
-<h3 class="text-center">Chỉnh sửa thông tin hiệu trưởng</h3>
+<h3 class="text-center">Chỉnh sửa thông tin giáo viên</h3>
 
 <form action="" method="post" class="form-">
     <div class="container">
@@ -15,7 +15,7 @@
     </div>
     <div class="form-group">
         <label>Giới tính</label>
-        <input type="radio" name="gender"value="<?= $teacher->gender ?>">Nam
+        <input type="radio"  name="gender" checked value="<?= $teacher->gender ?>">Nam
         <input type="radio" name="gender" value="<?= $teacher->gender ?>">Nữ
     </div>
 

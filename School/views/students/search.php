@@ -6,16 +6,18 @@
     <br>
     <div class="row">
         <div class="col-lg-4">
+            <a href="index.php?controller=student&action=add" class="btn btn-primary"><i class="fas fa-calendar-plus"></i></a>
         </div>
         <div class="col-lg-4"></div>
         <div class="col-lg-4">
             <nav class="navbar navbar-light bg-light">
-                <form action="" class="form-inline">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <form action="index.php?controller=student&action=search" method="POST" class="form-inline">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" name="search" aria-label="Search">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                 </form>
             </nav>
         </div>
+
         <table class="table table-boder" border="10">
             <thead>
                 <tr>
@@ -30,8 +32,9 @@
 
                 </tr>
             <tbody>
+            <tr>
                 <?php foreach ($students as $student) : ?>
-                    <tr>
+                    
                         <td><?= $student->id ?></td>
                         <td><?= $student->name ?></td>
                         <td><?= $student->gender ?></td>
@@ -53,8 +56,7 @@
         </table>
 
     </div>
-    <a href="index.php?controller=principal&action=index" class="btn btn-primary">Hiệu trưởng</a>
-    <a href="index.php?controller=teacher&action=index" class="btn btn-primary">Giáo viên</a>
-    <a href="index.php?controller=student&action=index" class="btn btn-primary">Học sinh</a>
+    <button class="btn btn-secondary" onclick="window.history.go(-1); return false;">Trở về</i></button>
+
 
     <?php include './layouts/footer.php' ?>

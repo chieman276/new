@@ -41,10 +41,13 @@ class principalModel
     {
 
         global $connect;
+
+
         $name = $data['name'];
         $gender = $data['gender'];
         $birthday = $data['birthday'];
         $position = $data['position'];
+        
         $sql = "INSERT INTO `principal` (`name`, `gender`, `birthday`, `position`) VALUES
          (
             '" . $data['name'] . "',

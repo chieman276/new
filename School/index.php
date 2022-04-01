@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 use controllers\principalController;
 use controllers\teacherController;
 
@@ -42,6 +42,15 @@ switch ($action) {
         break;
     case 'search':
         $objController->search_name();
+        break;
+    case 'class10':
+        $objController->class_10();
+        break;
+    case 'class11':
+        $objController->class_11();
+        break;
+    case 'class12':
+        $objController->class_12();
         break;
     default:
         $objController->index();

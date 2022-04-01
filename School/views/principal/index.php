@@ -4,6 +4,8 @@
     <br><br><br>
     <h1 style="text-align:center">Hiệu trưởng</h1>
     <br>
+    <?php echo (isset($alert)) ? $alert : ""; ?>
+
     <div class="row">
         <div class="col-lg-4">
             <a href="index.php?controller=principal&action=add" class="btn btn-primary"><i class="fas fa-calendar-plus"></i></a>
@@ -35,9 +37,9 @@
                         <td><?= $principal->birthday ?></td>
                         <td><?= $principal->position  ?></td>
 
-                        <td> <a href="index.php?controller=principal&action=show&id=<?= $principal->id ?>" class="btn btn-primary"><i class="fas fa-door-open"></i></a></td>
+                        <td> <a href="index.php?controller=principal&action=show&id=<?= $principal->id ?>" class="btn btn-primary"><i class="far fa-eye fa-lg text-light"></i></a></td>
                         <td> <a href="index.php?controller=principal&action=edit&id=<?= $principal->id ?>" class="btn btn-info"><i class="fas fa-edit"></i></a></td>
-                        <td> <a href="index.php?controller=principal&action=delete&id=<?= $principal->id ?>" onclick="return confirm ('Bạn có chắc muốn xóa <?= $principal->name ?> không')" class="btn btn-danger"> <i class="fas fa-trash-alt"></i></a></td>
+                        <td> <a href="index.php?controller=principal&action=delete&id=<?= $principal->id ?>" onclick="return confirm ('Không thể xóa Hiệu Trưởng( <?= $principal->name ?>) ')" class="btn btn-danger"> <i class="fas fa-trash-alt"></i></a></td>
 
                     </tr>
                 <?php endforeach; ?>
